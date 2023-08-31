@@ -1,28 +1,25 @@
 {
   "compilerOptions": {
+    /** General settings **/
     "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
+    "noEmit": true, // declares that tsc is only used for type checking and compiler to not output transpiled code
+    "esModuleInterop": true, // allow interop between ESM and CJS/AMD/UMD modules
     "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
+    "moduleResolution": "node", // use Nodejs module resolution strategy (else uses classic TS strategy)
+    "resolveJsonModule": true, // allow importing .json files
+    "isolatedModules": true, // warns if code can’t be correctly interpreted by a single-file transpilation process
     "jsx": "preserve",
     "incremental": true,
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    },
+    /** Compiler settings **/
+    "allowJs": true, // allow JS files to be imported
+    "skipLibCheck": true, // type check code specifically referring to rather than all d.ts files for libs
+    "forceConsistentCasingInFileNames": true, // issue error if file import is of different case
+    "strict": true, // ensures files are parsed in ECMAScript strict mode
     "plugins": [
       {
         "name": "next"
